@@ -47,7 +47,7 @@ if(window.location.protocol === 'http:')
 	server = "http://" + window.location.hostname + ":8088/janus";
 else
 	server = "https://" + window.location.hostname + ":8089/janus";
-
+server = 'http://62.107.110.161:8088/janus';
 var janus = null;
 var streaming = null;
 var started = false;
