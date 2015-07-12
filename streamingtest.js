@@ -48,6 +48,7 @@ if(window.location.protocol === 'http:')
 else
 	server = "https://" + window.location.hostname + ":8089/janus";
 server = 'http://62.107.110.161:8088/janus';
+var stun = 'stun.l.google.com:19302';
 var janus = null;
 var streaming = null;
 var started = false;
@@ -74,6 +75,7 @@ $(document).ready(function() {
 			janus = new Janus(
 				{
 					server: server,
+					iceServers: [{url:'stun:' + stun}],
 					success: function() {
 						// Attach to streaming plugin
 						janus.attach(
